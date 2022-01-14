@@ -1,6 +1,5 @@
 package com.devsuperior.dsmovie.controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,13 +19,12 @@ public class MovieController {
 	private MovieService service;
 	
 	@GetMapping
-	public Page<MovieDTO> findAll(Pageable pageable){
-		
-		return service.findAll(pageable);		
+	public Page<MovieDTO> findAll(Pageable pageable) {
+		return service.findAll(pageable);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public MovieDTO findById(@PathVariable Long id){
-		return service.findById(id);		
+	public MovieDTO findById(@PathVariable Long id) {
+		return service.findById(id);
 	}
 }
