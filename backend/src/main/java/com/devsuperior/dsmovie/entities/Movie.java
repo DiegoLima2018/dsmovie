@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Movie {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private Double score;
@@ -24,9 +24,8 @@ public class Movie {
 	
 	@OneToMany(mappedBy = "id.movie")
 	private Set<Score> scores = new HashSet<>();
-
-
-	public Movie() {
+	
+	public Movie() {		
 	}
 
 	public Movie(Long id, String title, Double score, Integer count, String image) {
@@ -80,4 +79,9 @@ public class Movie {
 	public Set<Score> getScores() {
 		return scores;
 	}
+	
+	
+	
+	
+
 }
